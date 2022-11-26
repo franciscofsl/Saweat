@@ -7,13 +7,16 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Saweat.Domain\Saweat.Domain.csproj" />
+        <ProjectReference Include="..\Saweat.Application.Contracts\Saweat.Application.Contracts.csproj"/>
+        <ProjectReference Include="..\Saweat.Domain\Saweat.Domain.csproj"/>
+        <ProjectReference Include="..\Saweat.Shared\Saweat.Shared.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="AutoMapper" Version="12.0.0" />
-      <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.4.0" />
-      <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+        <PackageReference Include="AutoMapper" Version="12.0.0"/>
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0"/>
+        <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.4.0"/>
+        <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0"/>
     </ItemGroup>
 
 </Project>

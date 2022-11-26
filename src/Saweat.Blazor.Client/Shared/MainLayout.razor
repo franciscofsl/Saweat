@@ -1,8 +1,8 @@
 @inherits LayoutComponentBase
-<RadzenDialog />
-<RadzenNotification />
-<RadzenTooltip />
-<RadzenContextMenu />
+<RadzenDialog/>
+<RadzenNotification/>
+<RadzenTooltip/>
+<RadzenContextMenu/>
 
 <RadzenLayout style="grid-template-areas: 'rz-sidebar rz-header' 'rz-sidebar rz-body';">
     <RadzenHeader>
@@ -20,7 +20,7 @@
         <div class="container-fluid pt-2 pt-md-3 pt-lg-4 pt-xl-5 pb-2 pb-lg-5" style="max-width: 1440px;">
             <div class="row">
                 <div class="col">
-                @Body
+                    @Body
                 </div>
             </div>
         </div>
@@ -30,14 +30,14 @@
             <svg width="48" height="48" viewBox="0 0 64 64">
                 <use href="/images/logo.svg#logo"></use>
             </svg>
-            <RadzenText Text="Saweat.Blazor" TextStyle="Radzen.Blazor.TextStyle.Subtitle1" class="mb-0" style="color: var(--rz-primary-light);" />
+            <RadzenText Text="Saweat.Blazor" TextStyle="TextStyle.Subtitle1" class="mb-0" style="color: var(--rz-primary-light);"/>
         </div>
         <RadzenPanelMenu>
-            <RadzenPanelMenuItem Text="Home" Path="/" />
+            <RadzenPanelMenuItem Text="Home" Path="/"/>
         </RadzenPanelMenu>
         <div class="py-3 py-md-4" style="padding: var(--rz-panel-menu-item-padding);">
-            <RadzenText Text="Saweat.Blazor v1.0.0" TextStyle="Radzen.Blazor.TextStyle.Caption" style="color: var(--rz-text-disabled-color);" TagName="Radzen.Blazor.TagName.P" TextAlign="Radzen.TextAlign.Center" />
-            <RadzenText Text="Copyright Ⓒ 2022" TextStyle="Radzen.Blazor.TextStyle.Caption" class="mb-0" style="color: var(--rz-text-disabled-color);" TagName="Radzen.Blazor.TagName.P" TextAlign="Radzen.TextAlign.Center" />
+            <RadzenText Text="Saweat.Blazor v1.0.0" TextStyle="TextStyle.Caption" style="color: var(--rz-text-disabled-color);" TagName="TagName.P" TextAlign="TextAlign.Center"/>
+            <RadzenText Text="Copyright Ⓒ 2022" TextStyle="TextStyle.Caption" class="mb-0" style="color: var(--rz-text-disabled-color);" TagName="TagName.P" TextAlign="TextAlign.Center"/>
         </div>
     </RadzenSidebar>
 </RadzenLayout>

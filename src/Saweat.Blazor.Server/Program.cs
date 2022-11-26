@@ -1,10 +1,15 @@
 using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Hosting.Server.Features;
 using Radzen;
+using Saweat.Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+
+builder.Services.AddInfrastructureServices(builder.Configuration);
+builder.Services.AddApplicationServices();
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
@@ -12,13 +17,15 @@ builder.Services.AddScoped<DialogService>();
 builder.Services.AddScoped<NotificationService>();
 builder.Services.AddScoped<TooltipService>();
 builder.Services.AddScoped<ContextMenuService>();
-builder.Services.AddSingleton(sp =>
-{
+builder.Services.AddSingleton(sp => {
     // Get the address that the app is currently running at
     var server = sp.GetRequiredService<IServer>();
     var addressFeature = server.Features.Get<IServerAddressesFeature>();
-    string baseAddress = addressFeature.Addresses.First();
-    return new HttpClient { BaseAddress = new Uri(baseAddress) };
+    var baseAddress = addressFeature.Addresses.First();
+    return new HttpClient
+    {
+        BaseAddress = new Uri(baseAddress)
+    };
 });
 
 var app = builder.Build();
@@ -48,3 +55,7 @@ app.MapControllers();
 app.MapFallbackToPage("/_Host");
 
 app.Run();
+
+public partial class Program
+{
+}
