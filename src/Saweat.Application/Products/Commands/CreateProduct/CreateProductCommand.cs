@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Saweat.Application.Common.Interfaces;
 using Saweat.Application.Contracts.Common;
 using Saweat.Domain.Entities;
 using Saweat.Domain.Events;
@@ -7,31 +8,30 @@ namespace Saweat.Application.Products.Commands.CreateProduct;
 
 public record CreateProductCommand : IRequest<Guid>
 {
-    public string Code { get; set; }
+    public string? Code { get; set; }
 }
 
 public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, Guid>
 {
-    private readonly IDbContext _context;
+    private readonly IRepository<Product> _repository;
 
-    public CreateProductCommandHandler(IDbContext context)
+    public CreateProductCommandHandler(IRepository<Product> repository)
     {
-        _context = context;
+        _repository = repository;
     }
 
     public async Task<Guid> Handle(CreateProductCommand request, CancellationToken cancellationToken)
     {
-        var entity = new Product
+        var product = new Product
         {
             Code = request.Code
         };
 
-        entity.AddDomainEvent(new ProductCreatedEvent(entity));
+        product.AddDomainEvent(new ProductCreatedEvent(product));
 
-        _context.Set<Product>().Add(entity);
+        await _repository.InsertAsync(product);
+        await _repository.SaveChangesAsync();
 
-        await _context.SaveChangesAsync(cancellationToken);
-
-        return entity.Id;
+        return product.Id;
     }
 }

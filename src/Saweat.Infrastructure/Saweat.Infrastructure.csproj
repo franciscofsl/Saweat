@@ -7,22 +7,22 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Saweat.Application.Contracts\Saweat.Application.Contracts.csproj"/>
-        <ProjectReference Include="..\Saweat.Application\Saweat.Application.csproj"/>
-        <ProjectReference Include="..\Saweat.Shared\Saweat.Shared.csproj"/>
+        <ProjectReference Include="..\Saweat.Application.Contracts\Saweat.Application.Contracts.csproj" />
+        <ProjectReference Include="..\Saweat.Application\Saweat.Application.csproj" />
+        <ProjectReference Include="..\Saweat.Shared\Saweat.Shared.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0"/>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.0"/>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.0"/>
-        <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.0"/>
-        <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0"/>
-        <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="6.0.0"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="6.0.0" />
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="Persistence\Migrations"/>
+        <Folder Include="Persistence\Migrations" />
     </ItemGroup>
 
 </Project>

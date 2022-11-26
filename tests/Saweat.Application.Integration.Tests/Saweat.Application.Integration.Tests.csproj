@@ -42,8 +42,4 @@
         </Content>
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Products\Queries" />
-    </ItemGroup>
-
 </Project>
