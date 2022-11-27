@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Saweat.Application.Common.Interfaces;
 using Saweat.Application.Contracts.Common;
+using Saweat.Infrastructure.Localizers;
 using Saweat.Infrastructure.Persistence;
 using Saweat.Infrastructure.Persistence.Repositories;
 
@@ -19,6 +20,7 @@ public static class ConfigureServices
 
         services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
         services.AddTransient(typeof(IReadOnlyRepository<>), typeof(ReadOnlyRepository<>));
+        services.AddScoped<IStringLocalizer, StringDbLocalizerService>();
         
         return services;
     }

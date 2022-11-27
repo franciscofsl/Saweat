@@ -19,6 +19,7 @@ public class ApplicationDbContext : DbContext, IDbContext
     }
 
     public DbSet<Product> Products => Set<Product>();
+    public DbSet<Translate> Translates => Set<Translate>();
 
 
     protected override void OnModelCreating(ModelBuilder builder)
@@ -37,5 +38,10 @@ public class ApplicationDbContext : DbContext, IDbContext
         await _mediator.DispatchDomainEvents(this);
 
         return await base.SaveChangesAsync(cancellationToken);
+    }
+
+    public void EnsureCreatedDatabase()
+    {
+        Database.EnsureCreated();
     }
 }
