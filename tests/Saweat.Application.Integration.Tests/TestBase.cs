@@ -2,6 +2,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Respawn;
 using System;
 using System.Threading.Tasks;
 using Xunit;
@@ -14,7 +15,7 @@ public abstract class TestBase : IDisposable
 {
     private static IConfiguration _configuration = null!;
     private static WebApplicationFactory<Program> _factory = null!;
-    private static Respawn.Respawner _checkpoint = null!;
+    private static Respawner _checkpoint = null!;
     private static IServiceScopeFactory _scopeFactory = null!;
 
     public TestBase()

@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using Saweat.Application.Contracts.Common;
 using Saweat.Domain.Entities;
 using System.Reflection;
