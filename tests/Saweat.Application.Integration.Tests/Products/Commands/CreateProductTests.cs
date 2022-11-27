@@ -1,5 +1,7 @@
 using FluentAssertions;
+using Saweat.Application.Integration.Tests.Helpers;
 using Saweat.Application.Products.Commands.CreateProduct;
+using Saweat.Shared;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -18,5 +20,18 @@ public class CreateProductTests : TestBase
         commandResult.AttachedObject.Should().NotBeEmpty();
         commandResult.Errors.Should().BeEmpty();
         commandResult.IsValid.Should().BeTrue();
+    }
+
+    [Fact]
+    public async Task Should_Not_Create_Product_If_Code_Is_To_Long()
+    {
+        var commandResult = await SendAsync(new CreateProductCommand()
+        {
+            Code = StringHelper.GenerateString(CommonConst.CodeMaxLenght + 1)
+        });
+        
+        commandResult.AttachedObject.Should().BeEmpty();
+        commandResult.Errors.Should().HaveCount(1);
+        commandResult.IsValid.Should().BeFalse();
     }
 }
