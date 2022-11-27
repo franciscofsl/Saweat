@@ -4,7 +4,17 @@ namespace Saweat.Domain.Common;
 
 public abstract class BaseEntity
 {
-    public Guid Id { get; set; }
+    public Guid Id { get; }
+
+    public BaseEntity()
+    {
+        
+    }
+    
+    public BaseEntity(Guid id)
+    {
+        Id = id;
+    }
 
     private readonly List<BaseEvent> _domainEvents = new List<BaseEvent>();
 

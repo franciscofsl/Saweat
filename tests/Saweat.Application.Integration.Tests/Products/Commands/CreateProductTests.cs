@@ -1,6 +1,5 @@
 using FluentAssertions;
 using Saweat.Application.Products.Commands.CreateProduct;
-using System;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -11,10 +10,13 @@ public class CreateProductTests : TestBase
     [Fact]
     public async Task Create_Product()
     {
-        var productId = await SendAsync(new CreateProductCommand()
+        var commandResult = await SendAsync(new CreateProductCommand()
         {
             Code = "Code"
         });
-        productId.Should().NotBe(Guid.Empty);
+        
+        commandResult.AttachedObject.Should().NotBeEmpty();
+        commandResult.Errors.Should().BeEmpty();
+        commandResult.IsValid.Should().BeTrue();
     }
 }

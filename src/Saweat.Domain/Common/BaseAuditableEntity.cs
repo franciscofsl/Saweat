@@ -1,7 +1,17 @@
 namespace Saweat.Domain.Common;
 
-public class BaseAuditableEntity : BaseEntity
+public abstract class BaseAuditableEntity : BaseEntity
 {
+    protected BaseAuditableEntity()
+    {
+        
+    }
+    
+    protected BaseAuditableEntity(Guid id) 
+        : base(id)
+    {
+    }
+    
     public DateTime Created { get; set; }
 
     public string? CreatedBy { get; set; }
