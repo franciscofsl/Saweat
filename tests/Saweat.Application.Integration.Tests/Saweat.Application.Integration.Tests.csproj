@@ -32,6 +32,7 @@
         <ProjectReference Include="..\..\src\Saweat.Application\Saweat.Application.csproj" />
         <ProjectReference Include="..\..\src\Saweat.Blazor.Server\Saweat.Blazor.Server.csproj" />
         <ProjectReference Include="..\..\src\Saweat.Infrastructure\Saweat.Infrastructure.csproj" />
+        <ProjectReference Include="..\Saweat.Tests.Helpers\Saweat.Tests.Helpers.csproj" />
     </ItemGroup>
 
     <ItemGroup>

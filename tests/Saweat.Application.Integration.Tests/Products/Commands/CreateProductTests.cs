@@ -1,7 +1,7 @@
 using FluentAssertions;
-using Saweat.Application.Integration.Tests.Helpers;
 using Saweat.Application.Products.Commands.CreateProduct;
 using Saweat.Shared;
+using Saweat.Tests.Helpers;
 using System.Threading.Tasks;
 using Xunit;
 
