@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Saweat.Application.Common.Interfaces;
 using Saweat.Application.Contracts.Common;
+using Saweat.Domain.Common;
 using Saweat.Domain.Entities;
 using Saweat.Domain.Events;
 
@@ -25,19 +26,15 @@ public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand,
 
     public async Task<CommandResult<Guid>> Handle(CreateProductCommand request, CancellationToken cancellationToken)
     {
-        var validationResult = await _validator.ValidateAsync(request);
+        var validationResult = await _validator.ValidateAsync(request, cancellationToken);
 
         if (!validationResult.IsValid)
         {
             return CommandResult<Guid>.Invalid(validationResult.Errors);
         }
-        
-        var product = new Product
-        {
-            Code = request.Code
-        };
 
-        
+        var product = new Product(GuidGenerator.Create(), request.Code);
+
         product.AddDomainEvent(new ProductCreatedEvent(product));
 
         await _repository.InsertAsync(product);

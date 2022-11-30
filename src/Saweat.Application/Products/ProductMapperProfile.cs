@@ -1,5 +1,5 @@
 using AutoMapper;
-using Saweat.Application.Products.Queries.GetAllProducts;
+using Saweat.Application.Contracts.Products;
 using Saweat.Domain.Entities;
 
 namespace Saweat.Application.Products;

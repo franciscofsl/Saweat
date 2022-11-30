@@ -24,6 +24,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saweat.Shared", "src\Saweat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saweat.Application.Integration.Tests", "tests\Saweat.Application.Integration.Tests\Saweat.Application.Integration.Tests.csproj", "{A2FCBF26-046D-48B5-9D6F-F5AAB166B2C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saweat.Tests.Helpers", "tests\Saweat.Tests.Helpers\Saweat.Tests.Helpers.csproj", "{91429482-3F14-4DBC-9E9A-C29E9A39B4F7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,7 @@ Global
 		{96E50D2C-3699-4321-9B36-872EA0AF7D13} = {45BD254B-382D-48A4-9344-C4441CB9C936}
 		{2F8B9AFD-278C-44F7-B1B3-D872A98CE836} = {45BD254B-382D-48A4-9344-C4441CB9C936}
 		{A2FCBF26-046D-48B5-9D6F-F5AAB166B2C4} = {0E40916D-F1A3-473B-9C8F-6B0B5574286D}
+		{91429482-3F14-4DBC-9E9A-C29E9A39B4F7} = {0E40916D-F1A3-473B-9C8F-6B0B5574286D}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{A7F9AF6D-374A-4685-BEBC-0D0B01B9315E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -82,5 +85,9 @@ Global
 		{A2FCBF26-046D-48B5-9D6F-F5AAB166B2C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2FCBF26-046D-48B5-9D6F-F5AAB166B2C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2FCBF26-046D-48B5-9D6F-F5AAB166B2C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91429482-3F14-4DBC-9E9A-C29E9A39B4F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91429482-3F14-4DBC-9E9A-C29E9A39B4F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91429482-3F14-4DBC-9E9A-C29E9A39B4F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91429482-3F14-4DBC-9E9A-C29E9A39B4F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

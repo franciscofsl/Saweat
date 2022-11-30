@@ -1,0 +1,44 @@
+@page "/Products"
+@using Saweat.Application.Contracts.Products
+@using Saweat.Application.Contracts.Common
+@using System.Net.Http.Json
+<h3>Products</h3>
+
+
+ <RadzenDataGrid 
+        AllowAlternatingRows="false" 
+        AllowColumnResize="true" 
+        AllowFiltering="true" 
+        AllowPaging="true" 
+        AllowSorting="false" 
+        Data="_products" 
+        FilterMode="FilterMode.Advanced" 
+        LogicalFilterOperator="LogicalFilterOperator.Or" 
+        PagerHorizontalAlign="HorizontalAlign.Left" 
+        PageSize="25" 
+        ShowPagingSummary="true" 
+        TItem="ProductForListDto">
+        <Columns>
+           
+        <RadzenDataGridColumn TItem="ProductForListDto" Property="Code" Title="Código"/>
+        </Columns>
+    
+    </RadzenDataGrid>
+
+@code {
+    //
+    // [Inject]
+    // public IProductService Service { get; set; }
+    
+    [Inject]
+    public HttpClient HttpService { get; set; }
+    
+    private IEnumerable<ProductForListDto> _products = new List<ProductForListDto>();
+   
+    protected override async Task OnInitializedAsync()
+    {
+        var data = await HttpService.GetFromJsonAsync<QueryResult<ProductForListDto>>("app/api/products");
+        _products = data.Items;
+    }
+
+}

@@ -1,11 +1,24 @@
+using System.Text.Json.Serialization;
+
 namespace Saweat.Application.Contracts.Common;
 
-public sealed class QueryResult<TDto> where TDto : class 
+public sealed class   QueryResult<TItem> where TItem : class
 {
-    public QueryResult(IEnumerable<TDto> items)
+    public int TotalCount => Items?.Count() ?? 0;
+    
+    public IEnumerable<TItem> Items { get; set;  }
+
+    public QueryResult()
     {
-        Items = items.ToList().AsReadOnly();
+        
+    } 
+    
+    [JsonConstructor]
+    public QueryResult(IEnumerable<TItem> items)
+    { 
+        Items = items;
     }
     
-    public IReadOnlyCollection<TDto> Items { get; }
+
+    public static QueryResult<TItem> Empty => new(Enumerable.Empty<TItem>());
 }

@@ -9,10 +9,16 @@ public class Product : BaseAuditableEntity
         
     }
     
-    public Product(Guid id)
+    public Product(Guid id, string code)
         : base(id)
     {
+        Code = code;
     }
 
-    public string Code { get; set; }
+    public string Code { get; private set; }
+
+    public void SetCode(string input)
+    {
+        Code = input;
+    }
 }
