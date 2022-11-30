@@ -15,7 +15,7 @@
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.11" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
-        <PackageReference Include="Moq" Version="4.18.2" />
+        <PackageReference Include="NSubstitute" Version="4.4.0" />
         <PackageReference Include="Respawn" Version="6.0.0" />
         <PackageReference Include="xunit" Version="2.4.1" />
         <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
@@ -32,6 +32,7 @@
         <ProjectReference Include="..\..\src\Saweat.Application\Saweat.Application.csproj" />
         <ProjectReference Include="..\..\src\Saweat.Blazor.Server\Saweat.Blazor.Server.csproj" />
         <ProjectReference Include="..\..\src\Saweat.Infrastructure\Saweat.Infrastructure.csproj" />
+        <ProjectReference Include="..\Saweat.Tests.Helpers\Saweat.Tests.Helpers.csproj" />
     </ItemGroup>
 
     <ItemGroup>

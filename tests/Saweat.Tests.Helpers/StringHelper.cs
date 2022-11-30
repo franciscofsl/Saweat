@@ -1,4 +1,4 @@
-namespace Saweat.Application.Integration.Tests.Helpers;
+namespace Saweat.Tests.Helpers;
 
 public static class StringHelper
 {
