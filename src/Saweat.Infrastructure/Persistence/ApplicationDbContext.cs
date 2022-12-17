@@ -20,6 +20,7 @@ public class ApplicationDbContext : DbContext, IDbContext
 
     public DbSet<Product> Products => Set<Product>();
     public DbSet<Translate> Translates => Set<Translate>();
+    public DbSet<Supplier> Suppliers => Set<Supplier>();
 
 
     protected override void OnModelCreating(ModelBuilder builder)

@@ -9,16 +9,24 @@ public class Product : BaseAuditableEntity
         
     }
     
-    public Product(Guid id, string code)
+    public Product(Guid id, Guid supplierId, string code, string name, int stock)
         : base(id)
     {
+        SupplierId = supplierId;
         Code = code;
+        Name = name;
+        Stock = stock;
     }
 
-    public string Code { get; private set; }
-
-    public void SetCode(string input)
-    {
-        Code = input;
-    }
+    public string Code { get; set; }
+    
+    public string Name { get; set; }
+    
+    public Guid SupplierId { get;  set; }
+    
+    public int Stock { get; set; }
+    
+    public virtual Supplier Supplier { get; set; }
+    
+ 
 }

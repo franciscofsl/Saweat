@@ -9,7 +9,13 @@ namespace Saweat.Application.Products.Commands.CreateProduct;
 
 public record CreateProductCommand : IRequest<CommandResult<Guid>>
 {
-    public string? Code { get; set; }
+    public string Code { get; set; }
+
+    public string Name { get; set; }
+    
+    public Guid SupplierId { get; set; }
+    
+    public int Stock { get; set; }
 }
 
 public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, CommandResult<Guid>>
@@ -33,7 +39,7 @@ public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand,
             return CommandResult<Guid>.Invalid(validationResult.Errors);
         }
 
-        var product = new Product(GuidGenerator.Create(), request.Code);
+        var product = new Product(GuidGenerator.Create(), request.SupplierId, request.Code, request.Name, request.Stock);
 
         product.AddDomainEvent(new ProductCreatedEvent(product));
 

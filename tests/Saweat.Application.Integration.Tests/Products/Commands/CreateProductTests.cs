@@ -14,6 +14,7 @@ public class CreateProductTests : TestBase
     {
         var commandResult = await SendAsync(new CreateProductCommand()
         {
+            Name = "Name",
             Code = "Code"
         });
         

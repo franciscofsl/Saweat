@@ -15,6 +15,7 @@ public class GetAllProductsTests : TestBase
         {
             await SendAsync(new CreateProductCommand()
             {
+                Name = $"Name {i}",
                 Code = $"Code {i}"
             });
         }
